@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Charte Passe-Clé (reprise de la démo Claude Design) */
+:root {
+  --fond: #ffffff;
+  --doux: #f5f3ee;
+  --carte: #ffffff;
+  --trait: #e3dfd6;
+  --encre: #17201c;
+  --gris: #56605b;
+  --sapin: #1e4a3d;
+  --sapin-doux: #e4eee9;
+  --sur-sapin: #ffffff;
+  --corail: #c2452a;
+  --corail-doux: #fbe7e1;
+  --sur-corail: #ffffff;
+  --or: #f2b33d;
+  --attente: #8a5a00;
+  --attente-doux: #fdf1d8;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0f1513;
+    --doux: #161e1b;
+    --carte: #1a2320;
+    --trait: #2d3934;
+    --encre: #ecf0ed;
+    --gris: #a6b2ac;
+    --sapin: #8ccbb2;
+    --sapin-doux: #1f3029;
+    --sur-sapin: #0f1513;
+    --corail: #e46e50;
+    --corail-doux: #3a231c;
+    --sur-corail: #160b07;
+    --attente: #f2c46b;
+    --attente-doux: #3a2e14;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-fond: var(--fond);
+  --color-doux: var(--doux);
+  --color-carte: var(--carte);
+  --color-trait: var(--trait);
+  --color-encre: var(--encre);
+  --color-gris: var(--gris);
+  --color-sapin: var(--sapin);
+  --color-sapin-doux: var(--sapin-doux);
+  --color-sur-sapin: var(--sur-sapin);
+  --color-corail: var(--corail);
+  --color-corail-doux: var(--corail-doux);
+  --color-sur-corail: var(--sur-corail);
+  --color-or: var(--or);
+  --color-attente: var(--attente);
+  --color-attente-doux: var(--attente-doux);
+  --font-sans: var(--font-figtree);
+  --font-titre: var(--font-bricolage);
+}
+
+body {
+  background: var(--fond);
+  color: var(--encre);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-bricolage);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Composants réutilisables */
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+}
+@utility btn-corail {
+  @apply btn bg-corail text-sur-corail hover:brightness-95;
+}
+@utility btn-sapin {
+  @apply btn bg-sapin text-sur-sapin hover:brightness-110;
+}
+@utility btn-ligne {
+  @apply btn border border-trait bg-carte text-encre hover:bg-doux;
+}
+@utility champ {
+  @apply min-h-11 w-full rounded-xl border border-trait bg-carte px-3 text-encre placeholder:text-gris focus:border-sapin;
+}
+@utility etiquette {
+  @apply mb-1 block text-sm font-semibold;
+}
+@utility carte {
+  @apply rounded-2xl border border-trait bg-carte;
+}
+@utility badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+
+:focus-visible {
+  outline: 3px solid var(--or);
+  outline-offset: 2px;
+}
