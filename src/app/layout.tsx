@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import Link from "next/link";
 import { Suspense } from "react";
+import { SymbolePasseCle } from "@/components/Logo";
 import { MenuCompte } from "@/components/MenuCompte";
 import "./globals.css";
 
@@ -40,7 +41,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <header className="sticky top-0 z-40 border-b border-trait bg-fond/95 backdrop-blur">
           <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4">
-            <Link href="/" className="font-titre text-[22px] font-extrabold tracking-tight text-sapin">
+            <Link href="/" className="flex items-center gap-2 font-titre text-[22px] font-extrabold tracking-tight text-sapin">
+              <SymbolePasseCle taille={34} />
               Passe-Clé
             </Link>
             <nav aria-label="Navigation principale" className="ml-auto flex items-center gap-1 text-sm font-semibold sm:gap-3">
@@ -61,7 +63,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <footer className="mt-16 border-t border-trait bg-doux">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-gris sm:flex-row sm:items-center">
-            <p className="font-titre font-bold text-encre">Passe-Clé</p>
+            <p className="flex items-center gap-2 font-titre font-bold text-encre">
+              <SymbolePasseCle taille={22} />
+              Passe-Clé
+            </p>
             <p>Le logement de ceux qui partent, pour ceux qui arrivent.</p>
             <nav aria-label="Informations légales" className="flex gap-4 sm:ml-auto">
               <Link href="/mentions-legales" className="hover:underline">
