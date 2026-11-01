@@ -39,7 +39,7 @@ async function Contenu({ searchParams }: { searchParams: PageProps<"/admin/signa
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-4">
-        <h1 className="text-3xl font-extrabold">Signalements</h1>
+        <h1 className="text-3xl font-semibold">Signalements</h1>
         <Link href={tous ? "/admin/signalements" : "/admin/signalements?tous=1"} className="text-sm font-semibold text-sapin hover:underline">
           {tous ? "Voir seulement les ouverts" : "Voir aussi les signalements traités"}
         </Link>

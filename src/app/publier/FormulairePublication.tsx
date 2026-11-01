@@ -137,7 +137,7 @@ export function FormulairePublication({ membreId, prenom, etablissement }: { mem
         <p className="text-sm font-semibold text-gris">
           Étape {etape + 1} sur {ETAPES.length}
         </p>
-        <h2 className="text-2xl font-extrabold">{ETAPES[etape]}</h2>
+        <h2 className="text-2xl font-semibold">{ETAPES[etape]}</h2>
       </div>
 
       {/* 1. Le logement */}
@@ -177,7 +177,7 @@ export function FormulairePublication({ membreId, prenom, etablissement }: { mem
         {pieces.map((p, i) => (
           <div key={p.cle} className="carte flex flex-col gap-3 p-4">
             <div className="flex items-center gap-2">
-              <span className="font-titre text-2xl font-extrabold text-or">{i + 1}</span>
+              <span className="font-titre text-2xl font-semibold text-or">{i + 1}</span>
               <input
                 aria-label={`Nom de la pièce ${i + 1}`}
                 value={p.nom}

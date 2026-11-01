@@ -36,12 +36,12 @@ async function Contenu({ searchParams }: { searchParams: PageProps<"/mon-espace"
   return (
     <div className="flex flex-col gap-10">
       <header className="flex flex-wrap items-center gap-4">
-        <span className="grid size-14 place-items-center rounded-full bg-sapin font-titre text-xl font-extrabold text-sur-sapin">
+        <span className="grid size-14 place-items-center rounded-full bg-sapin font-titre text-xl font-semibold text-sur-sapin">
           {(membre.prenom || membre.email)[0]?.toUpperCase()}
         </span>
         <div>
           <p className="text-gris">Bonjour</p>
-          <h1 className="text-3xl font-extrabold">{membre.prenom || "et bienvenue"}</h1>
+          <h1 className="text-3xl font-semibold">{membre.prenom || "et bienvenue"}</h1>
         </div>
         <form action={seDeconnecter} className="ml-auto">
           <button type="submit" className="btn-ligne">

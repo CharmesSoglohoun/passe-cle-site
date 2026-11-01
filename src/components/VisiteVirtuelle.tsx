@@ -55,7 +55,7 @@ export function VisiteVirtuelle({ pieces, titre }: { pieces: Piece[]; titre: str
           type="button"
           onClick={() => avancer(-1)}
           aria-label="Photo précédente"
-          className="absolute left-2 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-xl text-[#17201C] shadow"
+          className="absolute left-2 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-xl text-[#10241D] shadow"
         >
           ‹
         </button>
@@ -63,11 +63,11 @@ export function VisiteVirtuelle({ pieces, titre }: { pieces: Piece[]; titre: str
           type="button"
           onClick={() => avancer(1)}
           aria-label="Photo suivante"
-          className="absolute right-2 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-xl text-[#17201C] shadow"
+          className="absolute right-2 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-xl text-[#10241D] shadow"
         >
           ›
         </button>
-        <span className="badge absolute right-2 top-2 bg-white/90 text-[#17201C]">
+        <span className="badge absolute right-2 top-2 bg-white/90 text-[#10241D]">
           {indexPhoto + 1} / {piece.photos.length}
         </span>
       </div>

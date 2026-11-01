@@ -33,7 +33,7 @@ async function Resultats({ searchParams }: { searchParams: PageProps<"/logements
       </aside>
 
       <section aria-live="polite">
-        <h1 className="mb-1 text-2xl font-extrabold sm:text-3xl">
+        <h1 className="mb-1 text-2xl font-semibold sm:text-3xl">
           {annonces.length} logement{annonces.length > 1 ? "s" : ""}
           {filtres.campus ? ` près de ${nomCampus(filtres.campus)}` : " à Rennes"}
         </h1>

@@ -3,7 +3,7 @@ export function CadreCompte({ titre, intro, children }: { titre: string; intro?:
   return (
     <div className="mx-auto flex max-w-md flex-col gap-6 px-4 py-12">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-extrabold">{titre}</h1>
+        <h1 className="text-3xl font-semibold">{titre}</h1>
         {intro && <p className="text-gris">{intro}</p>}
       </div>
       <div className="carte p-6">{children}</div>

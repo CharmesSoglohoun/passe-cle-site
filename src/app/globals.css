@@ -1,41 +1,51 @@
 @import "tailwindcss";
 
-/* Charte Passe-Clé (reprise de la démo Claude Design) */
+/* Charte Passe-Clé : émeraude, pêche et sable (refonte du 2026-11-01).
+   Les noms historiques sont gardés : « sapin » = émeraude, « corail » = pêche foncée lisible en texte,
+   « peche » = pêche lumineuse pour les fonds et les boutons. */
 :root {
-  --fond: #ffffff;
-  --doux: #f5f3ee;
+  --fond: #fffcf7;
+  --doux: #f7efe4;
   --carte: #ffffff;
-  --trait: #e3dfd6;
-  --encre: #17201c;
-  --gris: #56605b;
-  --sapin: #1e4a3d;
-  --sapin-doux: #e4eee9;
+  --trait: #eadfd0;
+  --encre: #10241d;
+  --gris: #5a6660;
+  --sapin: #0b6e4f;
+  --sapin-fonce: #073d2d;
+  --sapin-doux: #e1f2ea;
   --sur-sapin: #ffffff;
-  --corail: #c2452a;
-  --corail-doux: #fbe7e1;
+  --corail: #b8532a;
+  --corail-doux: #fde7da;
   --sur-corail: #ffffff;
-  --or: #f2b33d;
+  --peche: #f6a27c;
+  --sur-peche: #073d2d;
+  --or: #e9b949;
   --attente: #8a5a00;
   --attente-doux: #fdf1d8;
+  --ombre: 0 1px 2px rgb(16 36 29 / 0.04), 0 8px 24px -12px rgb(16 36 29 / 0.12);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fond: #0f1513;
-    --doux: #161e1b;
-    --carte: #1a2320;
-    --trait: #2d3934;
-    --encre: #ecf0ed;
-    --gris: #a6b2ac;
-    --sapin: #8ccbb2;
-    --sapin-doux: #1f3029;
-    --sur-sapin: #0f1513;
-    --corail: #e46e50;
-    --corail-doux: #3a231c;
-    --sur-corail: #160b07;
+    --fond: #0b1411;
+    --doux: #111d19;
+    --carte: #15231e;
+    --trait: #24372f;
+    --encre: #eef3f0;
+    --gris: #a5b4ad;
+    --sapin: #5fd3a5;
+    --sapin-fonce: #062a1f;
+    --sapin-doux: #143328;
+    --sur-sapin: #06130e;
+    --corail: #ffb08c;
+    --corail-doux: #3a2219;
+    --sur-corail: #1a0c05;
+    --peche: #ffa67e;
+    --sur-peche: #1a0c05;
     --attente: #f2c46b;
     --attente-doux: #3a2e14;
+    --ombre: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.5);
     color-scheme: dark;
   }
 }
@@ -48,16 +58,19 @@
   --color-encre: var(--encre);
   --color-gris: var(--gris);
   --color-sapin: var(--sapin);
+  --color-sapin-fonce: var(--sapin-fonce);
   --color-sapin-doux: var(--sapin-doux);
   --color-sur-sapin: var(--sur-sapin);
   --color-corail: var(--corail);
   --color-corail-doux: var(--corail-doux);
   --color-sur-corail: var(--sur-corail);
+  --color-peche: var(--peche);
+  --color-sur-peche: var(--sur-peche);
   --color-or: var(--or);
   --color-attente: var(--attente);
   --color-attente-doux: var(--attente-doux);
   --font-sans: var(--font-figtree);
-  --font-titre: var(--font-bricolage);
+  --font-titre: var(--font-fraunces);
 }
 
 body {
@@ -68,17 +81,17 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-bricolage);
-  letter-spacing: -0.02em;
+  font-family: var(--font-fraunces);
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 /* Composants réutilisables */
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full px-5 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
 }
 @utility btn-corail {
-  @apply btn bg-corail text-sur-corail hover:brightness-95;
+  @apply btn bg-peche text-sur-peche shadow-sm hover:brightness-105 hover:shadow-md;
 }
 @utility btn-sapin {
   @apply btn bg-sapin text-sur-sapin hover:brightness-110;
@@ -93,7 +106,7 @@ h3 {
   @apply mb-1 block text-sm font-semibold;
 }
 @utility carte {
-  @apply rounded-2xl border border-trait bg-carte;
+  @apply rounded-3xl border border-trait bg-carte shadow-(--ombre);
 }
 @utility badge {
   @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;

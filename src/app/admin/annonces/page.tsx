@@ -37,7 +37,7 @@ async function Contenu({ searchParams }: { searchParams: PageProps<"/admin/annon
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-extrabold">Annonces</h1>
+      <h1 className="text-3xl font-semibold">Annonces</h1>
       <nav aria-label="Statut" className="flex flex-wrap gap-2">
         {ONGLETS.map((o) => (
           <Link

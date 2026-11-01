@@ -63,7 +63,7 @@ async function Fiche({ params }: { params: PageProps<"/logements/[id]">["params"
           <VisiteVirtuelle pieces={pieces} titre={libelle} />
 
           <header className="flex flex-col gap-2">
-            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">
+            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
               {libelle} · {annonce.quartier}
             </h1>
             <p className="text-gris">
@@ -179,7 +179,7 @@ async function Fiche({ params }: { params: PageProps<"/logements/[id]">["params"
         <aside className="flex flex-col gap-4 lg:sticky lg:top-20 lg:self-start">
           <div className="carte flex flex-col gap-4 p-5">
             <p className="flex items-baseline gap-1.5">
-              <span className="font-titre text-3xl font-extrabold tabular-nums">{euros(total(annonce))}</span>
+              <span className="font-titre text-3xl font-semibold tabular-nums">{euros(total(annonce))}</span>
               <span className="text-gris">CC / mois</span>
             </p>
             <h2 className="text-lg font-bold">Le bailleur · {annonce.bailleur_type}</h2>

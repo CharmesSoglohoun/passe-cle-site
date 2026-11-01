@@ -39,7 +39,7 @@ async function Contenu() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-3xl font-extrabold">Tableau de bord</h1>
+      <h1 className="text-3xl font-semibold">Tableau de bord</h1>
 
       {aTraiter.length > 0 ? (
         <div className="flex flex-wrap gap-3">
@@ -75,7 +75,7 @@ function Chiffre({ libelle, valeur, detail }: { libelle: string; valeur: number;
   return (
     <div className="carte p-4">
       <dt className="text-sm text-gris">{libelle}</dt>
-      <dd className="font-titre text-3xl font-extrabold tabular-nums">{valeur.toLocaleString("fr-FR")}</dd>
+      <dd className="font-titre text-3xl font-semibold tabular-nums">{valeur.toLocaleString("fr-FR")}</dd>
       {detail && <dd className="text-sm text-gris">{detail}</dd>}
     </div>
   );

@@ -34,7 +34,7 @@ async function Contenu() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-extrabold">Utilisateurs ({utilisateurs.length})</h1>
+      <h1 className="text-3xl font-semibold">Utilisateurs ({utilisateurs.length})</h1>
       <div className="overflow-x-auto rounded-2xl border border-trait">
         <table className="w-full min-w-[760px] text-left text-sm">
           <thead className="bg-doux text-gris">
